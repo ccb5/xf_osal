@@ -1,16 +1,16 @@
 /**
- * @file xf_osal_config.h
+ * @file xf_osal_config_internal.h
  * @author cangyu (sky.kirto@qq.com)
- * @brief
+ * @brief 
  * @version 0.1
- * @date 2023-12-14
- *
- * @copyright Copyright (c) 2023, CorAL. All rights reserved.
- *
+ * @date 2024-09-25
+ * 
+ * @copyright Copyright (c) 2024, CorAL. All rights reserved.
+ * 
  */
 
-#ifndef __XF_OSAL_CONFIG_H__
-#define __XF_OSAL_CONFIG_H__
+#ifndef __XF_OSAL_CONFIG_INTERNAL_H__
+#define __XF_OSAL_CONFIG_INTERNAL_H__
 
 /* ==================== [Includes] ========================================== */
 
@@ -74,5 +74,4 @@ extern "C" {
 } /* extern "C" */
 #endif
 
-#endif // __XF_OSAL_CONFIG_H__
-
+#endif // __XF_OSAL_CONFIG_INTERNAL_H__
