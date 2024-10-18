@@ -34,14 +34,18 @@ xf_osal_event_t xf_osal_event_create(const xf_osal_event_attr_t *attr)
 
 xf_err_t xf_osal_event_set(xf_osal_event_t event, uint32_t flags)
 {
-    osEventFlagsSet((osEventFlagsId_t)event, flags);
-    return XF_OK;
+    uint32_t status = osEventFlagsSet((osEventFlagsId_t)event, flags);
+    xf_err_t err = (status & osFlagsError) ? (transform_to_xf_err(status)) : (XF_OK);
+
+    return err;
 }
 
 xf_err_t xf_osal_event_clear(xf_osal_event_t event, uint32_t flags)
 {
-    osEventFlagsClear((osEventFlagsId_t)event, flags);
-    return XF_OK;
+    uint32_t status = osEventFlagsClear((osEventFlagsId_t)event, flags);
+    xf_err_t err = (status & osFlagsError) ? (transform_to_xf_err(status)) : (XF_OK);
+
+    return err;
 }
 
 uint32_t xf_osal_event_get(xf_osal_event_t event)
@@ -51,14 +55,18 @@ uint32_t xf_osal_event_get(xf_osal_event_t event)
 
 xf_err_t xf_osal_event_wait(xf_osal_event_t event, uint32_t flags, uint32_t options, uint32_t timeout)
 {
-    osEventFlagsWait((osEventFlagsId_t)event, flags, options, timeout);
-    return XF_OK;
+    uint32_t status = osEventFlagsWait((osEventFlagsId_t)event, flags, options, timeout);
+    xf_err_t err = (status & osFlagsError) ? (transform_to_xf_err(status)) : (XF_OK);
+
+    return err;
 }
 
 xf_err_t xf_osal_event_delete(xf_osal_event_t event)
 {
-    osEventFlagsDelete((osEventFlagsId_t)event);
-    return XF_OK;
+    uint32_t status = osEventFlagsDelete((osEventFlagsId_t)event);
+    xf_err_t err = (status & osFlagsError) ? (transform_to_xf_err(status)) : (XF_OK);
+
+    return err;
 }
 
 /* ==================== [Static Functions] ================================== */
