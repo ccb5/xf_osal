@@ -130,8 +130,10 @@ uint32_t xf_osal_thread_get_active_count(xf_osal_thread_t *thread_array, uint32_
 xf_err_t xf_osal_thread_notify_set(xf_osal_thread_t thread, uint32_t notify)
 {
 #if XF_CMSIS_THREAD_NOTIFY_IS_ENABLE
-    osThreadFlagsSet((osThreadId_t)thread, (uint32_t)notify);
-    return XF_OK;
+    uint32_t status = osThreadFlagsSet((osThreadId_t)thread, (uint32_t)notify);
+    xf_err_t err = (status & osFlagsError) ? (transform_to_xf_err(status)) : (XF_OK);
+
+    return err;
 #else
     return XF_ERR_NOT_SUPPORTED;
 #endif
@@ -140,8 +142,10 @@ xf_err_t xf_osal_thread_notify_set(xf_osal_thread_t thread, uint32_t notify)
 xf_err_t xf_osal_thread_notify_clear(uint32_t notify)
 {
 #if XF_CMSIS_THREAD_NOTIFY_IS_ENABLE
-    osThreadFlagsClear((uint32_t)notify);
-    return XF_OK;
+    uint32_t status = osThreadFlagsClear((uint32_t)notify);
+    xf_err_t err = (status & osFlagsError) ? (transform_to_xf_err(status)) : (XF_OK);
+
+    return err;
 #else
     return XF_ERR_NOT_SUPPORTED;
 #endif
@@ -159,8 +163,10 @@ uint32_t xf_osal_thread_notify_get(void)
 xf_err_t xf_osal_thread_notify_wait(uint32_t notify, uint32_t options, uint32_t timeout)
 {
 #if XF_CMSIS_THREAD_NOTIFY_IS_ENABLE
-    osThreadFlagsWait(notify, options, timeout);
-    return XF_OK;
+    uint32_t status = osThreadFlagsWait(notify, options, timeout);
+    xf_err_t err = (status & osFlagsError) ? (transform_to_xf_err(status)) : (XF_OK);
+
+    return err;
 #else
     return XF_ERR_NOT_SUPPORTED;
 #endif
