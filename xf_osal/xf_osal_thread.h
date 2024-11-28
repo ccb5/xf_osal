@@ -133,7 +133,8 @@ xf_err_t xf_osal_thread_suspend(xf_osal_thread_t thread);
 xf_err_t xf_osal_thread_resume(xf_osal_thread_t thread);
 xf_err_t xf_osal_thread_delete(xf_osal_thread_t thread);
 uint32_t xf_osal_thread_get_count(void);
-uint32_t xf_osal_thread_get_active_count(xf_osal_thread_t *thread_array, uint32_t array_items);
+uint32_t xf_osal_thread_enumerate(
+    xf_osal_thread_t *thread_array, uint32_t array_items);
 
 xf_err_t xf_osal_thread_notify_set(xf_osal_thread_t thread, uint32_t notify);
 xf_err_t xf_osal_thread_notify_clear(uint32_t notify);

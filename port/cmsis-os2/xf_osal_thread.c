@@ -131,9 +131,12 @@ uint32_t xf_osal_thread_get_count(void)
 #endif
 }
 
-uint32_t xf_osal_thread_get_active_count(xf_osal_thread_t *thread_array, uint32_t array_items)
+uint32_t xf_osal_thread_enumerate(xf_osal_thread_t *thread_array, uint32_t array_items)
 {
-#if XF_CMSIS_THREAD_GET_ACTIVE_COUNT_IS_ENABLE
+    if (NULL == thread_array) {
+        return xf_osal_thread_get_count();
+    }
+#if XF_CMSIS_THREAD_ENUMERATE_IS_ENABLE
     return osThreadEnumerate((osThreadId_t)thread_array, array_items);
 #else
     return 0U;
