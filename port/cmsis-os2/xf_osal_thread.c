@@ -103,8 +103,21 @@ xf_err_t xf_osal_thread_resume(xf_osal_thread_t thread)
 
 xf_err_t xf_osal_thread_delete(xf_osal_thread_t thread)
 {
-    osStatus_t status = osThreadTerminate((osThreadId_t)thread);
-    xf_err_t err = transform_to_xf_err(status);
+    xf_err_t err = XF_OK;
+
+    osStatus_t status;
+    if (NULL == thread) {
+#if XF_CMSIS_THREAD_DELETE_NULL_BASE_ON_TERMINATE_IS_ENABLE
+        thread = osThreadGetId();
+        if (NULL == thread) {
+            return XF_FAIL;
+        }
+#else
+        osThreadExit();
+#endif
+    }
+    status = osThreadTerminate((osThreadId_t)thread);
+    err = transform_to_xf_err(status);
 
     return err;
 }
