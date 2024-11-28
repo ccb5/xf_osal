@@ -1,7 +1,7 @@
 /**
  * @file xf_osal.h
  * @author cangyu (sky.kirto@qq.com)
- * @brief
+ * @brief xf_osal 公共头文件。
  * @version 0.1
  * @date 2023-12-07
  *
@@ -14,6 +14,7 @@
 
 /* ==================== [Includes] ========================================== */
 
+#include "xf_osal_def.h"
 #include "xf_osal_config_internal.h"
 #include "xf_utils.h"
 

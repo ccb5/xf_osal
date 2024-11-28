@@ -22,43 +22,43 @@ extern "C" {
 
 /* ==================== [Defines] =========================================== */
 
-#if (!defined(XF_OSAL_KERNEL_ENABLE) || (XF_OSAL_KERNEL_ENABLE))
+#if (!defined(XF_OSAL_KERNEL_ENABLE) || (XF_OSAL_KERNEL_ENABLE) || defined(__DOXYGEN__))
 #define XF_OSAL_KERNEL_IS_ENABLE (1)
 #else
 #define XF_OSAL_KERNEL_IS_ENABLE (0)
 #endif
 
-#if (!defined(XF_OSAL_THREAD_ENABLE) || (XF_OSAL_THREAD_ENABLE))
+#if (!defined(XF_OSAL_THREAD_ENABLE) || (XF_OSAL_THREAD_ENABLE) || defined(__DOXYGEN__))
 #define XF_OSAL_THREAD_IS_ENABLE (1)
 #else
 #define XF_OSAL_THREAD_IS_ENABLE (0)
 #endif
 
-#if (!defined(XF_OSAL_TIMER_ENABLE) || (XF_OSAL_TIMER_ENABLE))
+#if (!defined(XF_OSAL_TIMER_ENABLE) || (XF_OSAL_TIMER_ENABLE) || defined(__DOXYGEN__))
 #define XF_OSAL_TIMER_IS_ENABLE (1)
 #else
 #define XF_OSAL_TIMER_IS_ENABLE (0)
 #endif
 
-#if (!defined(XF_OSAL_EVENT_ENABLE) || (XF_OSAL_EVENT_ENABLE))
+#if (!defined(XF_OSAL_EVENT_ENABLE) || (XF_OSAL_EVENT_ENABLE) || defined(__DOXYGEN__))
 #define XF_OSAL_EVENT_IS_ENABLE (1)
 #else
 #define XF_OSAL_EVENT_IS_ENABLE (0)
 #endif
 
-#if (!defined(XF_OSAL_MUTEX_ENABLE) || (XF_OSAL_MUTEX_ENABLE))
+#if (!defined(XF_OSAL_MUTEX_ENABLE) || (XF_OSAL_MUTEX_ENABLE) || defined(__DOXYGEN__))
 #define XF_OSAL_MUTEX_IS_ENABLE (1)
 #else
 #define XF_OSAL_MUTEX_IS_ENABLE (0)
 #endif
 
-#if (!defined(XF_OSAL_SEMAPHORE_ENABLE) || (XF_OSAL_SEMAPHORE_ENABLE))
+#if (!defined(XF_OSAL_SEMAPHORE_ENABLE) || (XF_OSAL_SEMAPHORE_ENABLE) || defined(__DOXYGEN__))
 #define XF_OSAL_SEMAPHORE_IS_ENABLE (1)
 #else
 #define XF_OSAL_SEMAPHORE_IS_ENABLE (0)
 #endif
 
-#if (!defined(XF_OSAL_QUEUE_ENABLE) || (XF_OSAL_QUEUE_ENABLE))
+#if (!defined(XF_OSAL_QUEUE_ENABLE) || (XF_OSAL_QUEUE_ENABLE) || defined(__DOXYGEN__))
 #define XF_OSAL_QUEUE_IS_ENABLE (1)
 #else
 #define XF_OSAL_QUEUE_IS_ENABLE (0)
