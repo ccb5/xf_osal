@@ -18,7 +18,7 @@
 /* ==================== [Defines] =========================================== */
 
 #ifndef uxSemaphoreGetCountFromISR
-    #define uxSemaphoreGetCountFromISR( xSemaphore ) uxQueueMessagesWaitingFromISR( ( QueueHandle_t ) ( xSemaphore ) )
+#define uxSemaphoreGetCountFromISR( xSemaphore ) uxQueueMessagesWaitingFromISR( ( QueueHandle_t ) ( xSemaphore ) )
 #endif
 
 /* ==================== [Typedefs] ========================================== */
@@ -39,7 +39,6 @@
 
 #define UNMAP_PRIORITY(oldValue) (_MAP_VALUE((oldValue), Thread_Priority_Lowest, Thread_Priority_Highest, XF_OSAL_PRIORITY_LOW, XF_OSAL_PRIORITY_ISR - 1))
 #define MAP_PRIORITY(oldValue) (_MAP_VALUE((oldValue), XF_OSAL_PRIORITY_LOW, XF_OSAL_PRIORITY_ISR - 1, Thread_Priority_Lowest, Thread_Priority_Highest))
-
 
 /* ==================== [Global Functions] ================================== */
 
@@ -319,8 +318,12 @@ uint32_t xf_osal_thread_get_count(void)
     return (count);
 }
 
-uint32_t xf_osal_thread_get_active_count(xf_osal_thread_t *thread_array, uint32_t array_items)
+uint32_t xf_osal_thread_enumerate(xf_osal_thread_t *thread_array, uint32_t array_items)
 {
+    if (NULL == thread_array) {
+        return xf_osal_thread_get_count();
+    }
+
     uint32_t i, count;
     TaskStatus_t *task;
 
@@ -480,7 +483,6 @@ xf_err_t xf_osal_thread_notify_wait(uint32_t flags, uint32_t options, uint32_t t
 
     return XF_ERR_TIMEOUT;
 }
-
 
 xf_err_t xf_osal_delay(uint32_t ticks)
 {

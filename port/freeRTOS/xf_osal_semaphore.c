@@ -204,7 +204,6 @@ xf_err_t xf_osal_semaphore_delete(xf_osal_semaphore_t semaphore)
     return (stat);
 }
 
-
 /* ==================== [Static Functions] ================================== */
 
 #endif

@@ -1,7 +1,7 @@
 /**
  * @file xf_osal.h
  * @author cangyu (sky.kirto@qq.com)
- * @brief
+ * @brief xf_osal 公共头文件。
  * @version 0.1
  * @date 2023-12-07
  *
@@ -9,11 +9,19 @@
  *
  */
 
+/**
+ * @cond (XFAPI_USER || XFAPI_PORT || XFAPI_INTERNAL)
+ * @defgroup group_xf_osal xf_osal
+ * @brief xf_osal (操作系统抽象层) 允许在不同操作系统使用相同的功能。
+ * @endcond
+ */
+
 #ifndef __XF_OSAL_H__
 #define __XF_OSAL_H__
 
 /* ==================== [Includes] ========================================== */
 
+#include "xf_osal_def.h"
 #include "xf_osal_config_internal.h"
 #include "xf_utils.h"
 

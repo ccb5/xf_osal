@@ -1,12 +1,12 @@
 /**
  * @file xf_osal_config_internal.h
  * @author cangyu (sky.kirto@qq.com)
- * @brief 
+ * @brief
  * @version 0.1
  * @date 2024-09-25
- * 
+ *
  * @copyright Copyright (c) 2024, CorAL. All rights reserved.
- * 
+ *
  */
 
 #ifndef __XF_OSAL_CONFIG_INTERNAL_H__
@@ -22,43 +22,43 @@ extern "C" {
 
 /* ==================== [Defines] =========================================== */
 
-#if (!defined(XF_OSAL_KERNEL_ENABLE) || (XF_OSAL_KERNEL_ENABLE))
+#if (!defined(XF_OSAL_KERNEL_ENABLE) || (XF_OSAL_KERNEL_ENABLE) || defined(__DOXYGEN__))
 #define XF_OSAL_KERNEL_IS_ENABLE (1)
 #else
 #define XF_OSAL_KERNEL_IS_ENABLE (0)
 #endif
 
-#if (!defined(XF_OSAL_THREAD_ENABLE) || (XF_OSAL_THREAD_ENABLE))
+#if (!defined(XF_OSAL_THREAD_ENABLE) || (XF_OSAL_THREAD_ENABLE) || defined(__DOXYGEN__))
 #define XF_OSAL_THREAD_IS_ENABLE (1)
 #else
 #define XF_OSAL_THREAD_IS_ENABLE (0)
 #endif
 
-#if (!defined(XF_OSAL_TIMER_ENABLE) || (XF_OSAL_TIMER_ENABLE))
+#if (!defined(XF_OSAL_TIMER_ENABLE) || (XF_OSAL_TIMER_ENABLE) || defined(__DOXYGEN__))
 #define XF_OSAL_TIMER_IS_ENABLE (1)
 #else
 #define XF_OSAL_TIMER_IS_ENABLE (0)
 #endif
 
-#if (!defined(XF_OSAL_EVENT_ENABLE) || (XF_OSAL_EVENT_ENABLE))
+#if (!defined(XF_OSAL_EVENT_ENABLE) || (XF_OSAL_EVENT_ENABLE) || defined(__DOXYGEN__))
 #define XF_OSAL_EVENT_IS_ENABLE (1)
 #else
 #define XF_OSAL_EVENT_IS_ENABLE (0)
 #endif
 
-#if (!defined(XF_OSAL_MUTEX_ENABLE) || (XF_OSAL_MUTEX_ENABLE))
+#if (!defined(XF_OSAL_MUTEX_ENABLE) || (XF_OSAL_MUTEX_ENABLE) || defined(__DOXYGEN__))
 #define XF_OSAL_MUTEX_IS_ENABLE (1)
 #else
 #define XF_OSAL_MUTEX_IS_ENABLE (0)
 #endif
 
-#if (!defined(XF_OSAL_SEMAPHORE_ENABLE) || (XF_OSAL_SEMAPHORE_ENABLE))
+#if (!defined(XF_OSAL_SEMAPHORE_ENABLE) || (XF_OSAL_SEMAPHORE_ENABLE) || defined(__DOXYGEN__))
 #define XF_OSAL_SEMAPHORE_IS_ENABLE (1)
 #else
 #define XF_OSAL_SEMAPHORE_IS_ENABLE (0)
 #endif
 
-#if (!defined(XF_OSAL_QUEUE_ENABLE) || (XF_OSAL_QUEUE_ENABLE))
+#if (!defined(XF_OSAL_QUEUE_ENABLE) || (XF_OSAL_QUEUE_ENABLE) || defined(__DOXYGEN__))
 #define XF_OSAL_QUEUE_IS_ENABLE (1)
 #else
 #define XF_OSAL_QUEUE_IS_ENABLE (0)

@@ -53,10 +53,12 @@ xf_osal_state_t xf_osal_kernel_get_state(void)
 xf_err_t xf_osal_kernel_lock(void)
 {
 #if XF_CMSIS_KERNEL_LOCK_IS_ENABLE
+    /* res: 调度器之前的锁定状态 */
     int32_t res = osKernelLock();
-
-    if (res != 1) {
-        return XF_FAIL;
+    xf_err_t err = XF_OK;
+    if (res < 0) {
+        err = transform_to_xf_err(res);
+        return err;
     }
     return XF_OK;
 #else
@@ -67,12 +69,13 @@ xf_err_t xf_osal_kernel_lock(void)
 xf_err_t xf_osal_kernel_unlock(void)
 {
 #if XF_CMSIS_KERNEL_UNLOCK_IS_ENABLE
+    /* res: 调度器之前的锁定状态 */
     int32_t res = osKernelUnlock();
-
-    if (res != 0) {
-        return XF_FAIL;
+    xf_err_t err = XF_OK;
+    if (res < 0) {
+        err = transform_to_xf_err(res);
+        return err;
     }
-
     return XF_OK;
 #else
     return XF_ERR_NOT_SUPPORTED;

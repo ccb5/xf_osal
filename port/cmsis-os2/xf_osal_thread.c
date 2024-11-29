@@ -103,8 +103,21 @@ xf_err_t xf_osal_thread_resume(xf_osal_thread_t thread)
 
 xf_err_t xf_osal_thread_delete(xf_osal_thread_t thread)
 {
-    osStatus_t status = osThreadTerminate((osThreadId_t)thread);
-    xf_err_t err = transform_to_xf_err(status);
+    xf_err_t err = XF_OK;
+
+    osStatus_t status;
+    if (NULL == thread) {
+#if XF_CMSIS_THREAD_DELETE_NULL_BASE_ON_TERMINATE_IS_ENABLE
+        thread = osThreadGetId();
+        if (NULL == thread) {
+            return XF_FAIL;
+        }
+#else
+        osThreadExit();
+#endif
+    }
+    status = osThreadTerminate((osThreadId_t)thread);
+    err = transform_to_xf_err(status);
 
     return err;
 }
@@ -118,9 +131,12 @@ uint32_t xf_osal_thread_get_count(void)
 #endif
 }
 
-uint32_t xf_osal_thread_get_active_count(xf_osal_thread_t *thread_array, uint32_t array_items)
+uint32_t xf_osal_thread_enumerate(xf_osal_thread_t *thread_array, uint32_t array_items)
 {
-#if XF_CMSIS_THREAD_GET_ACTIVE_COUNT_IS_ENABLE
+    if (NULL == thread_array) {
+        return xf_osal_thread_get_count();
+    }
+#if XF_CMSIS_THREAD_ENUMERATE_IS_ENABLE
     return osThreadEnumerate((osThreadId_t)thread_array, array_items);
 #else
     return 0U;
