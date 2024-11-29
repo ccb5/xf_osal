@@ -98,7 +98,8 @@ xf_err_t xf_osal_kernel_lock(void);
 xf_err_t xf_osal_kernel_unlock(void);
 
 /**
- * @todo 添加挂起与恢复 kernel 相关 API，以供低功耗设备使用无滴答操作。
+ * @addtogroup group_xf_osal
+ * @todo - 添加挂起与恢复 kernel 相关 API，以供低功耗设备使用无滴答操作。
  */
 
 /**

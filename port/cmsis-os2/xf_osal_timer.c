@@ -71,7 +71,6 @@ xf_err_t xf_osal_timer_delete(xf_osal_timer_t timer)
     return err;
 }
 
-
 /* ==================== [Static Functions] ================================== */
 
 #endif

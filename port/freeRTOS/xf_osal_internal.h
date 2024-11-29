@@ -89,8 +89,6 @@ __STATIC_INLINE uint32_t IRQ_Context(void)
 
 /* ==================== [Macros] ============================================ */
 
-
-
 #ifdef __cplusplus
 } /* extern "C" */
 #endif

@@ -34,7 +34,8 @@ static void timer_callback(TimerHandle_t hTimer);
 
 /* ==================== [Global Functions] ================================== */
 
-xf_osal_timer_t xf_osal_timer_create(xf_osal_timer_func_t func, xf_osal_timer_type_t type, void *argument, xf_osal_timer_attr_t *attr)
+xf_osal_timer_t xf_osal_timer_create(xf_osal_timer_func_t func, xf_osal_timer_type_t type, void *argument,
+                                     xf_osal_timer_attr_t *attr)
 {
     const char *name;
     TimerHandle_t hTimer;

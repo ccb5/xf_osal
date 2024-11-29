@@ -1,12 +1,12 @@
 /**
  * @file xf_osal_config_internal.h
  * @author cangyu (sky.kirto@qq.com)
- * @brief 
+ * @brief
  * @version 0.1
  * @date 2024-09-25
- * 
+ *
  * @copyright Copyright (c) 2024, CorAL. All rights reserved.
- * 
+ *
  */
 
 #ifndef __XF_OSAL_CONFIG_INTERNAL_H__

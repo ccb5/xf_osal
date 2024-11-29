@@ -163,5 +163,4 @@ uint32_t xf_osal_kernel_ms_to_ticks(uint32_t ms)
 
 /* ==================== [Static Functions] ================================== */
 
-
 #endif

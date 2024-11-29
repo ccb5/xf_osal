@@ -4,9 +4,9 @@
  * @brief xf_osal 内部公共定义、函数、数据。
  * @version 1.0
  * @date 2024-11-27
- * 
+ *
  * Copyright (c) 2024, CorAL. All rights reserved.
- * 
+ *
  */
 
 #ifndef __XF_OSAL_DEF_H__
