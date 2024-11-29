@@ -19,6 +19,15 @@
 #include "xf_osal_def.h"
 #include "xf_osal_thread.h"
 
+/**
+ * @cond XFAPI_USER
+ * @ingroup group_xf_osal
+ * @defgroup group_xf_osal_mutex mutex
+ * @brief 互斥 (Mutex) 同步资源访问
+ * @endcond
+ * @{
+ */
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -181,6 +190,11 @@ xf_err_t xf_osal_mutex_delete(xf_osal_mutex_t mutex);
 #ifdef __cplusplus
 } /* extern "C" */
 #endif
+
+/**
+ * End of defgroup group_xf_osal_mutex mutex
+ * @}
+ */
 
 #endif // __XF_OSAL_MUTEX_H__
 

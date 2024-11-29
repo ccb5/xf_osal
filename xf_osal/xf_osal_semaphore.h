@@ -18,6 +18,15 @@
 
 #include "xf_osal_def.h"
 
+/**
+ * @cond XFAPI_USER
+ * @ingroup group_xf_osal
+ * @defgroup group_xf_osal_semaphore semaphore
+ * @brief 信号量可以管理和保护对共享资源的访问。
+ * @endcond
+ * @{
+ */
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -122,6 +131,11 @@ xf_err_t xf_osal_semaphore_delete(xf_osal_semaphore_t semaphore);
 #ifdef __cplusplus
 } /* extern "C" */
 #endif
+
+/**
+ * End of defgroup group_xf_osal_semaphore semaphore
+ * @}
+ */
 
 #endif // __XF_OSAL_SEMAPHORE_H__
 

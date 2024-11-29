@@ -9,6 +9,13 @@
  *
  */
 
+/**
+ * @cond (XFAPI_USER || XFAPI_PORT || XFAPI_INTERNAL)
+ * @defgroup group_xf_osal xf_osal
+ * @brief xf_osal (操作系统抽象层) 允许在不同操作系统使用相同的功能。
+ * @endcond
+ */
+
 #ifndef __XF_OSAL_H__
 #define __XF_OSAL_H__
 

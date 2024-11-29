@@ -18,6 +18,15 @@
 
 #include "xf_osal_def.h"
 
+/**
+ * @cond XFAPI_USER
+ * @ingroup group_xf_osal
+ * @defgroup group_xf_osal_timer timer
+ * @brief 创建和控制定时器和定时器回调函数。
+ * @endcond
+ * @{
+ */
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -146,6 +155,11 @@ xf_err_t xf_osal_timer_delete(xf_osal_timer_t timer);
 #ifdef __cplusplus
 } /* extern "C" */
 #endif
+
+/**
+ * End of defgroup group_xf_osal_timer timer
+ * @}
+ */
 
 #endif // __XF_OSAL_TIMER_H__
 

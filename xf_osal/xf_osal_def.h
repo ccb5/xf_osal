@@ -14,6 +14,13 @@
 
 /* ==================== [Includes] ========================================== */
 
+/**
+ * @cond XFAPI_USER
+ * @addtogroup group_xf_osal
+ * @endcond
+ * @{
+ */
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -38,5 +45,10 @@ extern "C" {
 #ifdef __cplusplus
 } /* extern "C" */
 #endif
+
+/**
+ * End of addtogroup group_xf_osal
+ * @}
+ */
 
 #endif /* __XF_OSAL_DEF_H__ */

@@ -34,6 +34,15 @@
 
 #include "xf_osal_def.h"
 
+/**
+ * @cond XFAPI_USER
+ * @ingroup group_xf_osal
+ * @defgroup group_xf_osal_event event
+ * @brief 事件标志可以同步线程。
+ * @endcond
+ * @{
+ */
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -163,6 +172,11 @@ xf_err_t xf_osal_event_delete(xf_osal_event_t event);
 #ifdef __cplusplus
 } /* extern "C" */
 #endif
+
+/**
+ * End of defgroup group_xf_osal_event event
+ * @}
+ */
 
 #endif // __XF_OSAL_EVENT_H__
 

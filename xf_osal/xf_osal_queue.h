@@ -18,6 +18,15 @@
 
 #include "xf_osal_def.h"
 
+/**
+ * @cond XFAPI_USER
+ * @ingroup group_xf_osal
+ * @defgroup group_xf_osal_queue queue
+ * @brief 以类似 FIFO 的操作在线程之间交换消息。
+ * @endcond
+ * @{
+ */
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -139,6 +148,11 @@ xf_err_t xf_osal_queue_delete(xf_osal_queue_t queue);
 #ifdef __cplusplus
 } /* extern "C" */
 #endif
+
+/**
+ * End of defgroup group_xf_osal_queue queue
+ * @}
+ */
 
 #endif // __XF_OSAL_QUEUE_H__
 

@@ -19,6 +19,15 @@
 #include "xf_osal_def.h"
 #include "xf_osal_kernel.h"
 
+/**
+ * @cond XFAPI_USER
+ * @ingroup group_xf_osal
+ * @defgroup group_xf_osal_thread thread
+ * @brief 定义、创建和控制线程函数。
+ * @endcond
+ * @{
+ */
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -466,6 +475,11 @@ xf_err_t xf_osal_delay_ms(uint32_t ms);
 #ifdef __cplusplus
 } /* extern "C" */
 #endif
+
+/**
+ * End of defgroup group_xf_osal_thread thread
+ * @}
+ */
 
 #endif // __XF_OSAL_THREAD_H__
 

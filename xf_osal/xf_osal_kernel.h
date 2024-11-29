@@ -18,6 +18,15 @@
 
 #include "xf_osal_def.h"
 
+/**
+ * @cond XFAPI_USER
+ * @ingroup group_xf_osal
+ * @defgroup group_xf_osal_kernel kernel
+ * @brief 调度器内核控制。
+ * @endcond
+ * @{
+ */
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -98,7 +107,6 @@ xf_err_t xf_osal_kernel_lock(void);
 xf_err_t xf_osal_kernel_unlock(void);
 
 /**
- * @addtogroup group_xf_osal
  * @todo - 添加挂起与恢复 kernel 相关 API，以供低功耗设备使用无滴答操作。
  */
 
@@ -145,6 +153,11 @@ uint32_t xf_osal_kernel_ms_to_ticks(uint32_t ms);
 #ifdef __cplusplus
 } /* extern "C" */
 #endif
+
+/**
+ * End of defgroup group_xf_osal_kernel kernel
+ * @}
+ */
 
 #endif // __XF_OSAL_KERNEL_H__
 
